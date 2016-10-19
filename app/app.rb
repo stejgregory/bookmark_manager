@@ -5,7 +5,9 @@ ENV["RACK_ENV"] ||= "development"
 
 class BookmarkManager < Sinatra::Base
 
-  get '/'
+  get '/' do
+    "welcome to the bookmark manager"
+  end
 
   get '/links' do
     @links = Link.all

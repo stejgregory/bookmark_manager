@@ -4,6 +4,9 @@ require_relative 'data_mapper_setup'
 ENV["RACK_ENV"] ||= "development"
 
 class BookmarkManager < Sinatra::Base
+
+  get '/'
+
   get '/links' do
     @links = Link.all
     erb :'/links/index'

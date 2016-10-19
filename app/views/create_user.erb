@@ -1,7 +1,18 @@
 <form action="/users" method="post" id="sign_up_form">
-	<input type="text" name="name">
-	<input type="text" name="email">
-	<input type="password" name="password">
+	<label for='email'>
+		Email:
+		<input type="text" name="email">
+	</label>
+	&nbsp;
+	<label for='password'>
+		Password:
+		<input type="password" name="password">
+	</label>
+	&nbsp;
+	<label for='confirm_password'>
+		Confirm Password:
+		<input type="password" name="password_confirmation">
+	</label>
 </form>
-	
+
 <button type="submit" form="sign_up_form" value="Sign Up">Sign Up</button>

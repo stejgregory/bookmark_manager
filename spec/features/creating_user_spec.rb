@@ -7,7 +7,8 @@ feature 'Creating users' do
 	end
 
 	scenario 'user provides mismatching passwords' do
-		create_user('ben@example.com', 'apples', 'pears')
-		expect(User.all.length).to be(0)
+		create_user(password_confirmation: 'wrong')
+  	expect(current_path).to eq('/users')
+  	expect(page).to have_content 'Password and confirmation password do not match'
 	end
 end

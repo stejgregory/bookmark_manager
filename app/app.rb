@@ -39,6 +39,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/users' do
+    @user = User.new
     erb :create_user
   end
 

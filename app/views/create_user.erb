@@ -1,7 +1,7 @@
 <form action="/users" method="post" id="sign_up_form">
 	<label for='email'>
 		Email:
-		<input type="text" name="email" value='<%= @user.email %>'>
+		<input type="text" name="email" value='<%= @user.email %>' required>
 	</label>
 	&nbsp;
 	<label for='password'>

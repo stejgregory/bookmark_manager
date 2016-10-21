@@ -12,7 +12,6 @@ end
 def sign_in_user(email: "default@example.com",
 								password: "password")
 	visit('/sign_in')
-
 	fill_in :email, with: email
 	fill_in :password, with: password
 	click_button('Sign In')

@@ -17,9 +17,10 @@ feature 'Creating users' do
     expect { create_user(email: "invalid@email") }.not_to change(User, :count)
   end
 
-	scenario "I can't sign up with an email address if it is already in use" do
-		create_user
-		expect { create_user }.not_to change(User, :count)
-		expect(page).to have_content('Email is already taken')
+	scenario 'I cannot sign up with an existing email' do
+	  create_user
+	  expect { create_user }.to_not change(User, :count)
+	  expect(page).to have_content('Email is already taken')
 	end
+
 end

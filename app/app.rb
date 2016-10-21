@@ -11,7 +11,7 @@ class BookmarkManager < Sinatra::Base
   register Sinatra::Flash
 
   get '/' do
-    "welcome to the bookmark manager"
+    redirect '/links'
   end
 
   get '/links' do

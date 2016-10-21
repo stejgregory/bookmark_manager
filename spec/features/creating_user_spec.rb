@@ -1,9 +1,6 @@
 feature 'Creating users' do
 	scenario 'creating a user' do
-		create_user('ben@example.com', 'password', 'password')
-		initial_length = User.all.length
-		create_user('ben@example.com', 'password', 'password')
-		expect(User.all.length).to be > initial_length
+		expect { create_user }.to change(User, :count).by 1
 	end
 
 	scenario 'user provides mismatching passwords' do
@@ -13,7 +10,7 @@ feature 'Creating users' do
 	end
 
 	scenario "I can't sign up without an email address" do
-    expect { create_user(email: nil, password: "kittycat", password_confirmation: "kittycat") }.not_to change(User, :count)
+    expect { create_user(email: nil) }.not_to change(User, :count)
   end
 
 	scenario "I can't sign up with an invalid email address" do

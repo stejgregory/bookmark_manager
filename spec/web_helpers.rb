@@ -1,4 +1,6 @@
-def create_user(email="default@example.com", password="password", password_confirmation)
+def create_user(email: "default@example.com",
+								password: "password",
+								password_confirmation: "password")
 	visit('/users')
 
 	fill_in :email, with: email
